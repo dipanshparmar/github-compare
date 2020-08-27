@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- internal CSS -->
+    <link rel="stylesheet" href="scss/style.css" />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Github Compare</title>
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <span class="logo-tex">Github Compare</span>
+      </div>
+      <div id="functioning">
+        <div id="first-input">
+          <input type="text" placeholder="Enter Username" class="first-name" />
+          <div id="suggestions">
+            <div id="slide">
+              <img src="" alt="" />
+              <span>dipanshparmar</span>
+            </div>
+            <div id="slide">
+              <img src="" alt="" />
+              <span>amit</span>
+            </div>
+          </div>
+        </div>
+        <div id="second-input">
+          <input type="text" placeholder="Enter Username" class="second-name" />
+          <div id="suggestions">
+            <div id="slide">
+              <img src="" alt="" />
+              <span>dipanshparmar</span>
+            </div>
+            <div id="slide">
+              <img src="" alt="" />
+              <span>amit</span>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="compare">compare</button>
+      </div>
+    </header>
+
+    <!-- main section -->
+    <main id="compare-results">
+      <div id="profile1">
+        <img src="assets/crown.png" class="crown" />
+        <img
+          src="https://img5.goodfon.com/wallpaper/nbig/5/96/marina-laswick-devushka-vzgliad-volosy-portret-foto-krasivai.jpg"
+          alt="user profile"
+          class="display-profile"
+        />
+        <span class="name">Angela Taylor</span>
+        <span class="score">9</span>
+        <span class="stars">3</span>
+        <span class="repos">five</span>
+        <span class="stars">9</span>
+        <hr />
+        <span class="url">ff</span>
+      </div>
+      <div id="comparison-content">
+        <img class="crown" src="assets/crown.png" />
+        <div id="text-container">
+          <h2 class="text">VS</h2>
+        </div>
+        <span class="name-heading">-Name-</span>
+        <span class="score-heading">-Followers-</span>
+        <span class="stars-heading">-Following-</span>
+        <span class="repos-heading">-Repos-</span>
+        <span class="grade-heading">-Stars-</span>
+        <hr />
+        <span class="url">-URL-</span>
+      </div>
+      <div id="profile2">
+        <img src="assets/crown.png" alt="crown" class="crown" />
+        <img
+          src="https://img5.goodfon.com/wallpaper/nbig/5/96/marina-laswick-devushka-vzgliad-volosy-portret-foto-krasivai.jpg"
+          alt="user profile"
+          class="display-profile"
+        />
+        <span class="name">Swifty</span>
+        <span class="score">9</span>
+        <span class="stars">3</span>
+        <span class="repos">five</span>
+        <span class="stars">9</span>
+        <hr />
+        <span class="url">ff</span>
+      </div>
+    </main>
+
+    <footer>
+      <button>Reset</button>
+    </footer>
+
+    <!-- internal js -->
+    <script src="app.js"></script>
+  </body>
+</html>

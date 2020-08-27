@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  max-height: 100vh;
+  min-height: 100vh;
+  background: black;
+  color: white;
+}
+
+body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+  background: #1b1b1b;
+}
+
+body header div#logo span {
+  font-size: 18px;
+  color: white;
+}
+
+body header div#functioning {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header div#functioning div#first-input #suggestions, body header div#functioning div#second-input #suggestions {
+  position: absolute;
+  background: white;
+  color: #1b1b1b;
+  padding: 5px;
+  width: 251px;
+  max-height: 30vh;
+  overflow-x: hidden;
+}
+
+body header div#functioning div#first-input #suggestions #slide, body header div#functioning div#second-input #suggestions #slide {
+  width: 253px;
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+body header div#functioning div#first-input #suggestions #slide span, body header div#functioning div#second-input #suggestions #slide span {
+  font-size: 13px;
+}
+
+body header div#functioning input {
+  padding: 0px 5px 5px 5px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-bottom: 1px solid white;
+  background: #1b1b1b;
+  outline: none;
+  color: white;
+  margin-right: 10px;
+}
+
+body header div#functioning input::-webkit-input-placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #cacaca;
+}
+
+body header div#functioning input:-ms-input-placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #cacaca;
+}
+
+body header div#functioning input::-ms-input-placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #cacaca;
+}
+
+body header div#functioning input::placeholder {
+  font-family: "Poppins", sans-serif;
+  color: #cacaca;
+}
+
+body header div#functioning button {
+  padding: 10px 13px;
+  text-transform: uppercase;
+  font-size: 10px;
+  border: none;
+  background: white;
+  color: #1b1b1b;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: 20px;
+}
+
+body main#compare-results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 80vh;
+}
+
+body main#compare-results #profile1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 70vh;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body main#compare-results #profile1 .crown {
+  height: 40px;
+  width: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body main#compare-results #profile1 .display-profile {
+  margin-top: -15px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+body main#compare-results #profile1 span.name {
+  color: #27c727;
+}
+
+body main#compare-results #comparison-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 70vh;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body main#compare-results #comparison-content div#text-container {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -15px;
+}
+
+body main#compare-results #comparison-content .crown {
+  height: 40px;
+  width: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  visibility: hidden;
+}
+
+body main#compare-results #comparison-content span {
+  text-align: center;
+}
+
+body main#compare-results #profile2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 70vh;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+body main#compare-results #profile2 .crown {
+  height: 40px;
+  width: 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body main#compare-results #profile2 .display-profile {
+  height: 200px;
+  border-radius: 10px;
+  margin-top: -15px;
+}
+
+body main#compare-results #profile2 hr {
+  width: 100%;
+}
+
+body main#compare-results #profile2 span.name {
+  color: #27c727;
+}
+
+body footer {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #1b1b1b;
+}
+
+body footer button {
+  padding: 5px 10px;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background: white;
+}
+/*# sourceMappingURL=style.css.map */
