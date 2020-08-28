@@ -14,6 +14,20 @@ body {
   background: rgb(0, 0, 0);
   color: white;
 
+  #alertForReset {
+    visibility: hidden;
+    position: absolute;
+    left:38%;
+    top: 80px;
+
+    span {
+      font-size: 14px;
+      background: red;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+  }
+
   header {
     display: flex;
     justify-content: space-around;
@@ -41,14 +55,22 @@ body {
           width: 251px;
           max-height: 30vh;
           overflow-x: hidden;
+          display: none;
 
           #slide {
             width: 253px;
             cursor: pointer;
             margin-top: 3px;
+            display: flex;
+            align-items: center;
+
+            img.suggestion-image {
+              height: 20px;
+            }
 
             span {
               font-size: 13px;
+              margin-left: 10px;
             }
           }
         }

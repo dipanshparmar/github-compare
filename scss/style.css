@@ -11,6 +11,20 @@ body {
   color: white;
 }
 
+body #alertForReset {
+  visibility: hidden;
+  position: absolute;
+  left: 38%;
+  top: 80px;
+}
+
+body #alertForReset span {
+  font-size: 14px;
+  background: red;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
 body header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,16 +57,28 @@ body header div#functioning div#first-input #suggestions, body header div#functi
   width: 251px;
   max-height: 30vh;
   overflow-x: hidden;
+  display: none;
 }
 
 body header div#functioning div#first-input #suggestions #slide, body header div#functioning div#second-input #suggestions #slide {
   width: 253px;
   cursor: pointer;
   margin-top: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header div#functioning div#first-input #suggestions #slide img.suggestion-image, body header div#functioning div#second-input #suggestions #slide img.suggestion-image {
+  height: 20px;
 }
 
 body header div#functioning div#first-input #suggestions #slide span, body header div#functioning div#second-input #suggestions #slide span {
   font-size: 13px;
+  margin-left: 10px;
 }
 
 body header div#functioning input {
