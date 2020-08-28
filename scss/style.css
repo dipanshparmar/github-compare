@@ -126,6 +126,9 @@ body main#compare-results #profile1 {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body main#compare-results #profile1 .crown {
@@ -134,6 +137,11 @@ body main#compare-results #profile1 .crown {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  visibility: hidden;
+}
+
+body main#compare-results #profile1 hr {
+  width: 100%;
 }
 
 body main#compare-results #profile1 .display-profile {
@@ -199,9 +207,9 @@ body main#compare-results #profile2 {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body main#compare-results #profile2 .crown {
@@ -210,6 +218,7 @@ body main#compare-results #profile2 .crown {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  visibility: hidden;
 }
 
 body main#compare-results #profile2 .display-profile {
