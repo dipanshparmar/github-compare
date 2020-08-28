@@ -14,6 +14,29 @@ body {
   background: rgb(0, 0, 0);
   color: white;
 
+  #notice {
+    position: absolute;
+    background: black;
+    color: white;
+    height: 100vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 5%;
+    visibility: hidden;
+
+    i {
+      font-size: 30px;
+    }
+
+    span {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
   #alertForReset {
     visibility: hidden;
     position: absolute;
@@ -219,6 +242,27 @@ body {
       cursor: pointer;
       border-radius: 5px;
       background: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    #notice {
+      visibility: visible;
+    }
+
+    // made all of them none because banner was not fitting correcting
+    header {
+      display: none;
+    }
+
+    div#content {
+      display: none;
+    }
+
+    div#img {
+      display: none;
     }
   }
 }

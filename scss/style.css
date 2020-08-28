@@ -11,6 +11,38 @@ body {
   color: white;
 }
 
+body #notice {
+  position: absolute;
+  background: black;
+  color: white;
+  height: 100vh;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 5%;
+  visibility: hidden;
+}
+
+body #notice i {
+  font-size: 30px;
+}
+
+body #notice span {
+  margin-top: 10px;
+  text-align: center;
+}
+
 body #alertForReset {
   visibility: hidden;
   position: absolute;
@@ -287,5 +319,20 @@ body footer button {
   cursor: pointer;
   border-radius: 5px;
   background: white;
+}
+
+@media only screen and (max-width: 768px) {
+  body #notice {
+    visibility: visible;
+  }
+  body header {
+    display: none;
+  }
+  body div#content {
+    display: none;
+  }
+  body div#img {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
