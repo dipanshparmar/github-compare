@@ -16,27 +16,24 @@
     <title>Github Compare</title>
   </head>
   <body>
+    <!-- aler for reset button -->
+    <div id="alertForReset">
+      <span>Please click on the 'RESET' button to continue</span>
+    </div>
     <header>
       <div id="logo">
         <span class="logo-tex">Github Compare</span>
       </div>
       <div id="functioning">
         <div id="first-input">
-          <input type="text" placeholder="Enter Username" class="first-name" />
-          <div id="suggestions">
-            <div id="slide">
-              <img src="" alt="" />
-              <span>dipanshparmar</span>
-            </div>
+          <input type="text" placeholder="Enter Username" class="first-name first-name-input" autofocus/>
+          <div id="suggestions" class="suggestionOne">
+            <!-- to display the search results -->
           </div>
         </div>
         <div id="second-input">
-          <input type="text" placeholder="Enter Username" class="second-name" />
-          <div id="suggestions">
-            <div id="slide">
-              <img src="" alt="" />
-              <span>dipanshparmar</span>
-            </div>
+          <input type="text" placeholder="Enter Username" class="second-name second-name-input"/>
+          <div id="suggestions" class="suggestionTwo">
           </div>
         </div>
         <button type="button" id="compare">compare</button>

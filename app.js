@@ -12,11 +12,45 @@ const repos = [];
 const stars = [];
 const url = [];
 
+// we will use this variable to show the alert
+let isInputChanged = false;
+
 // points
 let firstUserPoints = 0,
   secondUserPoints = 0;
 
 /* event listeners */
+
+// event listener for key strokes on first input box
+document.querySelector(".first-name-input").addEventListener("keyup", () => {
+  // checking if the input is not empty
+  if (document.querySelector(".first-name-input").value.trim()) {
+    // calling the function to get search results
+    getsearchSuggestions(
+      document.querySelector(".first-name-input").value,
+      ".suggestionOne"
+    );
+  } else {
+    // if input box is empty then making the suggestion box's display none
+    document.querySelector(".suggestionOne").style.display = "none";
+  }
+});
+
+// event listener for key strokes on second input
+// event listener for key strokes on first input box
+document.querySelector(".second-name-input").addEventListener("keyup", () => {
+  // checking if the input is not empty
+  if (document.querySelector(".second-name-input").value.trim()) {
+    // calling the function to get search results
+    getsearchSuggestions(
+      document.querySelector(".second-name-input").value,
+      ".suggestionTwo"
+    );
+  } else {
+    // if input box is empty then making the suggestion box's display none
+    document.querySelector(".suggestionTwo").style.display = "none";
+  }
+});
 
 // looking for click on compare button
 document.querySelector("#compare").addEventListener("click", () => {
@@ -27,15 +61,62 @@ document.querySelector("#compare").addEventListener("click", () => {
   if (firstUser.trim() && secondUser.trim()) {
     // fetching the api with given names
     getUsers(apiURL, firstUser, secondUser);
+
+    // disabling the input fields
+    // getting the buttons
+    const firstInput = document.querySelector(".first-name");
+    const secondInput = document.querySelector(".second-name");
+
+    // diabling the clicks
+    firstInput.style.pointerEvents = "none";
+    secondInput.style.pointerEvents = "none";
+
+    // making the opacity low
+    firstInput.style.opacity = "0.5";
+    secondInput.style.opacity = "0.5";
+
+    // setting input button style changed to true
+    isInputChanged = true;
+
+    // making the compare button disable, pointer events to none and cursor to default
+    document.querySelector("#compare").style.opacity = "0.5";
+    document.querySelector("#compare").style.pointerEvents = "none";
+    document.querySelector("#compare").style.cursor = "default";
   } else {
+    // alerting if input boxes are empty
     alert("Please fill in both the fields");
   }
 });
 
-// making the reset button functional
-document.querySelector("#reset").addEventListener("click", () => {
-  document.querySelector("#compare-results").innerHTML = "";
-});
+// function to display search suggestions
+async function getsearchSuggestions(name, className) {
+  const response = await fetch(`https://api.github.com/users/${name}`);
+  const data = await response.json();
+
+  // getting the username
+  const username = data.login;
+
+  // adding suggestions to DOM
+  document.querySelector(`${className}`).innerHTML = `<div id="slide">
+  <img src="${data.avatar_url}" class='suggestion-image' alt="profile picture" />
+  <span>${username}</span>
+  </div>`;
+
+  if (username) {
+    // making the suggestion box visible
+    document.querySelector(`${className}`).style.display = "block";
+  } else {
+    // making the suggestion box hidden
+    document.querySelector(`${className}`).innerHTML = `<div id="slide">
+    <span>No user found</span>
+    </div>`;
+  }
+
+  // hiding the suggestion if clicked on somewhere else on the document
+  document.addEventListener("click", () => {
+    document.querySelector(`${className}`).style.display = "none";
+  });
+}
 
 // function to display the content
 function displayContent() {
@@ -234,3 +315,43 @@ async function getUsers(apiURL, firstName, secondName) {
   // getting and pushing the repos count, getting the stars count on the same function
   findAndPushReposCount(firstName, secondName);
 }
+
+// making the reset button functional
+document.querySelector("#reset").addEventListener("click", () => {
+  // removing the results content
+  document.querySelector("#compare-results").innerHTML = "";
+
+  // reloading the window
+  window.location.reload();
+});
+
+// adding event listener on header to check the click on disabled inputs
+// for first input button
+document.querySelector("#first-input").addEventListener("click", () => {
+  if (isInputChanged) {
+    document.querySelector("#alertForReset").style.visibility = "visible";
+  }
+});
+// for second input button
+document.querySelector("#second-input").addEventListener("click", () => {
+  if (isInputChanged) {
+    document.querySelector("#alertForReset").style.visibility = "visible";
+  }
+});
+
+// if enter clicked on first input button then hide the suggestion box
+document
+  .querySelector(".first-name-input")
+  .addEventListener("keypress", (event) => {
+    if (event.keyCode == 13) {
+      document.querySelector(".suggestionOne").style.visibility = "hidden";
+    }
+  });
+// if enter clicked on second input box then search the results
+document
+  .querySelector(".second-name-input")
+  .addEventListener("keypress", (event) => {
+    if (event.keyCode == 13) {
+      document.querySelector(".suggestionTwo").style.visibility = "hidden";
+    }
+  });
